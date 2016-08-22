@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="generator" content="HTMLy v2.7.4" />
+<link rel="icon" type="image/x-icon" href="http://localhost/sebelas_id/blog/favicon.png" />
+<link rel="sitemap" href="http://localhost/sebelas_id/blog/sitemap.xml" />
+<link rel="alternate" type="application/rss+xml" title="sebelas.id - Blog Feed" href="http://localhost/sebelas_id/blog/feed/rss" />
+
+    <title>Login - sebelas.id - Blog</title>
+    <meta name="description" content="Login page from sebelas.id - Blog."/>
+            <link rel="canonical" href="http://localhost/sebelas_id/blog//login" />
+        <link href="http://localhost/sebelas_id/blog/system/resources/css/admin.css" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+        <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="admin in-login" itemscope="itemscope" itemtype="http://schema.org/Blog">
+<div class="hide">
+    <meta content="sebelas.id - Blog" itemprop="name"/>
+    <meta content="sebelas.id Blog " itemprop="description"/>
+</div>
+<div id="outer-wrapper">
+    <div id="menu-wrapper">
+        <div class="container">
+            <nav id="menu">
+                <ul class="nav "><li class="item first"><a target="_blank" href="http://localhost/sebelas_id/">Home</a></li><li class="item"><a target="_blank" href="http://localhost/sebelas_id/gallery">Gallery</a></li><li class="item"><a target="_blank" href="http://localhost/sebelas_id/store">Store</a></li><li class="item last"><a target="_blank" href="http://localhost/sebelas_id/about">About</a></li></ul>                    <form id="search-form" method="get">
+        <input type="text" class="search-input" name="search" value="Search" onfocus="if (this.value == 'Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search';}">
+        <input type="submit" value="Search" class="search-button">
+    </form>            </nav>
+        </div>
+    </div>
+    <div id="header-wrapper">
+        <div class="container">
+            <header id="header">
+                <section id="branding">
+                    <h1 class="blog-title"><a href="http://localhost/sebelas_id/blog/">sebelas.id - Blog</a></h1>
+                    <div class="blog-tagline"><p>sebelas.id</p></div>
+                </section>
+            </header>
+        </div>
+    </div>
+    <div id="content-wrapper">
+        <div class="container">
+            <section id="content">
+                <h1>Login</h1>
+    <form method="POST" action="login">
+        User <span class="required">*</span> <br>
+        <input type="text" class="" name="user"/><br><br>
+        Password <span class="required">*</span> <br>
+        <input type="password" class="" name="password"/><br><br>
+        <input type="hidden" name="csrf_token" value="2dc42d3b8bb26c75f72e8eec8d862bd8126a116b">
+                <input type="submit" name="submit" value="Login"/>
+    </form>            </section>
+        </div>
+    </div>
+    <div id="footer-wrapper">
+        <div class="container">
+            <footer id="footer">
+                <div class="copyright"><p>(c) sebelas.id</p><p></p></div>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>
