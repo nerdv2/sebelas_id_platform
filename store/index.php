@@ -6,13 +6,13 @@
 <div class="box-slider">
 <ul id="autoWidth" class="cs-hidden">
   <li class="item-a">
-        <a href=""><img src="img/Slide.jpg" style="min-width:100%;max-height:100%;"></a>
+        <a href="itemdetails.php?id=50"><img src="img/Slide.jpg" style="min-width:100%;max-height:100%;"></a>
   </li>
   <li class="item-b">
-        <a href=""><img src="img/Slide3.jpg" style="min-width:100%;max-height:100%;"></a>
+        <a href="itemdetails.php?id=48"><img src="img/Slide3.jpg" style="min-width:100%;max-height:100%;"></a>
   </li>
   <li class="item-c">
-        <a href=""><img src="img/Slide2.jpg" style="min-width:100%;max-height:100%;"></a>
+        <a href="itemdetails.php?id=49"><img src="img/Slide2.jpg" style="min-width:100%;max-height:100%;"></a>
   </li>
 </ul>
 </div>
