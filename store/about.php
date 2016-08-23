@@ -1,7 +1,7 @@
 <?php
 	include('header.php');
 ?>
-<h2>About hidroponik.id</h2>
+<h2>About sebelas.id</h2>
 
 <h3>Profile of SMKN 11 Bandung, Indonesia</h3>
 

@@ -27,6 +27,10 @@ h6 {
     font-size: 14px; 
 }
 
+a {
+    color: #fff;
+}
+
 .navbar-custom {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
@@ -571,4 +575,31 @@ h1.brand-heading {
   .timeline > li.timeline-inverted > .timeline-panel {
     padding: 0 100px 20px 20px;
   }
+}
+
+#store-element {
+    display: none;
+}
+
+#blog-element {
+    display: none;
+}
+#gallery-element {
+    display: none;
+}
+#storebutton:hover #store-element {
+  display: block;
+}
+
+#blogbutton:hover #blog-element {
+  display: block;
+}
+
+#gallerybutton:hover #gallery-element {
+  display: block;
+}
+
+.linkfooter {
+    color: #fff;
+    text-align: center;
 }

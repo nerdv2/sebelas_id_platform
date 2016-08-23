@@ -1,7 +1,7 @@
 <?php
 	include('header.php');
 ?>
-<h2>How To Buy on hidroponik.id</h2>
+<h2>How To Buy on sebelas.id</h2>
 
 <ul>
     <li>First of all you must sign up by filling the form available</li>
