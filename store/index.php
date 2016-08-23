@@ -3,6 +3,23 @@
     include('config.php');
 ?>
 </p>
+<script type="text/javascript">
+      $(document).ready(function() {
+        $('#autoWidth').lightSlider({
+                autoWidth:true,
+                item: 1,
+                speed: 800,
+                pause: 5000,
+                pauseOnHover: true,
+                auto: true,
+                loop: true,
+                onSliderLoad: function() {
+            $('#autoWidth').removeClass('cS-hidden');
+        } 
+                
+            });
+        });
+    </script>
 <div class="box-slider">
 <ul id="autoWidth" class="cs-hidden">
   <li class="item-a">
@@ -66,23 +83,6 @@
         }   
 ?>
 </div>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('#autoWidth').lightSlider({
-                autoWidth:true,
-                item: 1,
-                speed: 800,
-                pause: 5000,
-                pauseOnHover: true,
-                auto: true,
-                loop: true,
-                onSliderLoad: function() {
-            $('#autoWidth').removeClass('cS-hidden');
-        } 
-                
-            });
-        });
-    </script>
     <?php
         getData();
         include('footer.php');
