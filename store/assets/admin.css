@@ -1,0 +1,9 @@
+.navbar-brand{
+    font: 25px bold;
+    font-family: 'trebuchet MS', 'Lucida sans', Arial;
+}
+.navbar{
+    background-color: #FFF;
+    border: 0px;
+    color: #FFF;
+}

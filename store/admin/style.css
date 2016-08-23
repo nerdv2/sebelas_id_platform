@@ -255,3 +255,8 @@ input:hover {
 .searchinput:focus {
   color: #858585;
 }
+
+.navbar-brand{
+    font: 25px bold;
+    font-family: 'trebuchet MS', 'Lucida sans', Arial;
+}

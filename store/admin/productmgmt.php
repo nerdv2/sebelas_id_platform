@@ -1,6 +1,3 @@
-<?php
-include('connectme.php');
-?>
 <?php 
     session_start();
     $role = $_SESSION['sess_userrole'];
@@ -9,24 +6,31 @@ include('connectme.php');
     }
 ?>
 <html>
+<head><!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8589-1" />
+<meta charset="utf-8">
 <title>Product Data</title>
-<link href="style.css" rel="stylesheet">
-</head>
+<link rel="stylesheet" href="../assets/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<link rel="stylesheet" href="../assets/parsley.css">
 
+<script src="../assets/jquery.min.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+<script src="../assets/parsley.js"></script>
+</head>
 <body>
 <?php
-$sql = 'select * from product_data';
-$query = mysqli_query($db_link,$sql);
+	include "header.php";
 ?>
 <h2><strong><p align="center">Product Data</p></strong></h2>
-<h4><p align="center"><a href="adminpanel.php">Return to Admin Panel</a></p></h4>
-<table width="850" border="1" cellpadding="0" align="center" class="bordered">
+<table width="1200" border="1" cellpadding="0" align="center" class="bordered">
 	<tr>
 		<form method="get" action="searchproduct.php">
-		<td colspan='11'><select name="searchwhat">
-			<option selected="selected">--Search--</option>
+		<td colspan='11'>
+			<select name="searchwhat">
+				<option selected="selected">--Search--</option>
 				<option name='id' value='id'>Product ID</option>
 				<option name='name' value='name'>Product Name</option>
 				<option name='id' value='id'>Category ID</option>
@@ -37,22 +41,32 @@ $query = mysqli_query($db_link,$sql);
 		</td>
 		</form>
 	</tr>
+	<tr>
+		<td>
+			<?php 
+				// include "category.php";
+			?>
+		<td>
+	<tr>
 	<!--DWLayoutTable-->
 	<tr>
-		<td height="29" align="center" valign="middle" bgcolor="#00FFFF">Product ID</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Name</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Category ID</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Price</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">SKU</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Stock</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Weight</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Dimension</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Image Link</td>
+		<td width="65" align="center" valign="middle" bgcolor="#00FFFF">Product ID</td>
+		<td width="250" align="center" valign="middle" bgcolor="#00FFFF">Name</td>
+		<td width="70" align="center" valign="middle" bgcolor="#00FFFF">Category ID</td>
+		<td width="50" align="center" valign="middle" bgcolor="#00FFFF">Price</td>
+		<td width="100" align="center" valign="middle" bgcolor="#00FFFF">SKU</td>
+		<td width="50" align="center" valign="middle" bgcolor="#00FFFF">Stock</td>
+		<td width="60" align="center" valign="middle" bgcolor="#00FFFF">Weight</td>
+		<td width="70" align="center" valign="middle" bgcolor="#00FFFF">Dimension</td>
+		<td width="70" align="center" valign="middle" bgcolor="#00FFFF">Image Link</td>
 		<td align="center" valign="middle" bgcolor="#00FFFF">Info</td>
 		<td align="center" valign="middle" bgcolor="#00FFFF"><a href="add_product.php"><img style="max-width:40px;max-height:40px;width:auto;height:auto;" src="img/Page-Add.png"></img></a>
 		</td>
 	</tr>
 <?php
+	include "connectme.php";
+	$sql = 'select * from product_data';
+	$query = mysqli_query($db_link,$sql);
 	while($data = mysqli_fetch_array($query)){
 ?>
 	<tr>

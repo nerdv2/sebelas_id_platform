@@ -1,7 +1,5 @@
-<?php
-include('connectme.php');
-?>
 <?php 
+    include "connectme.php";
     session_start();
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!=1){
@@ -9,20 +7,29 @@ include('connectme.php');
     }
 ?>
 <html>
+<head><!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8589-1" />
-<title>Users Data</title>
-<link href="style.css" rel="stylesheet">
+<meta charset="utf-8">
+<title>Users data</title>
+<link rel="stylesheet" href="../assets/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<link rel="stylesheet" href="../assets/parsley.css">
+
+<script src="../assets/jquery.min.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+<script src="../assets/parsley.js"></script>
 </head>
 
 <body>
 <?php
+include "header.php";
 $sql = 'select * from users';
 $query = mysqli_query($db_link,$sql);
 ?>
 <h2><strong><p align="center">Users Data</p></strong></h2>
-<h4><p align="center"><a href="adminpanel.php">Return to Admin Panel</a></p></h4>
-<table width="850" border="1" cellpadding="0" align="center" class="bordered">
+<table width="1200" border="1" cellpadding="0" align="center" class="bordered">
 	<tr>
 		<form method="get" action="searchuser.php">
 		<td colspan='11'><select name="searchwhat">

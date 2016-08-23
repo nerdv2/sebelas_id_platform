@@ -1,7 +1,5 @@
-<?php
-include('connectme.php');
-?>
 <?php 
+    include "connectme.php";
     session_start();
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!=1){
@@ -9,20 +7,29 @@ include('connectme.php');
     }
 ?>
 <html>
+<head><!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8589-1" />
+<meta charset="utf-8">
 <title>Payment Data</title>
-<link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<link rel="stylesheet" href="../assets/parsley.css">
+
+<script src="../assets/jquery.min.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+<script src="../assets/parsley.js"></script>
 </head>
 
 <body>
 <?php
+include "header.php";
 $sql = 'select * from payment_data';
 $query = mysqli_query($db_link,$sql);
 ?>
 <h2><strong><p align="center">Payment Data</p></strong></h2>
-<h4><p align="center"><a href="adminpanel.php">Return to Admin Panel</a></p></h4>
-<table width="900" border="1" cellpadding="0" align="center" class="bordered">
+<table width="1200" border="1" cellpadding="0" align="center" class="bordered">
 	<tr>
 		<form method="get" action="searchpayment.php">
 		<td colspan='11'><select name="searchwhat">
@@ -41,15 +48,15 @@ $query = mysqli_query($db_link,$sql);
 	</tr>
 	<!--DWLayoutTable-->
 	<tr>
-		<td height="29" align="center" valign="middle" bgcolor="#00FFFF">Order ID</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Order Date</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Customer Name</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Amount Paid</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Transfer Target</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Confirm Date</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Username</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Email</td>
-		<td align="center" valign="middle" bgcolor="#00FFFF">Phone</td>
+		<td height="29" width="80" align="center" valign="middle" bgcolor="#00FFFF">Order ID</td>
+		<td width="175" align="center" valign="middle" bgcolor="#00FFFF">Order Date</td>
+		<td width="140" align="center" valign="middle" bgcolor="#00FFFF">Customer Name</td>
+		<td width="125" align="center" valign="middle" bgcolor="#00FFFF">Amount Paid</td>
+		<td width="125" align="center" valign="middle" bgcolor="#00FFFF">Transfer Target</td>
+		<td width="125" align="center" valign="middle" bgcolor="#00FFFF">Confirm Date</td>
+		<td width="100" align="center" valign="middle" bgcolor="#00FFFF">Username</td>
+		<td width="210" align="center" valign="middle" bgcolor="#00FFFF">Email</td>
+		<td width="" align="center" valign="middle" bgcolor="#00FFFF">Phone</td>
 	</tr>
 <?php
 	while($data = mysqli_fetch_array($query)){

@@ -1,7 +1,5 @@
-<?php
-include('connectme.php');
-?>
 <?php 
+    include "connectme.php";
     session_start();
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!=1){
@@ -9,14 +7,23 @@ include('connectme.php');
     }
 ?>
 <html>
+<head><!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8589-1" />
-<title>Product Data</title>
-<link href="style.css" rel="stylesheet">
+<meta charset="utf-8">
+<title>ecommerce_dv Admin Panel</title>
+<link rel="stylesheet" href="../assets/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<link rel="stylesheet" href="../assets/parsley.css">
+
+<script src="../assets/jquery.min.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+<script src="../assets/parsley.js"></script>
 </head>
 
 <body>
 <?php
+include "header.php";
     $id = $_REQUEST['id'];
     $sql = "select * from users where id = '$id'";
     $query = mysqli_query($db_link,$sql);

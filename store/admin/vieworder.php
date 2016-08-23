@@ -13,12 +13,21 @@ include('connectme.php');
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8589-1" />
-<title>Order Data</title>
-<link href="style.css" rel="stylesheet">
+<meta charset="utf-8">
+<title>View Order</title>
+<link rel="stylesheet" href="../assets/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<link rel="stylesheet" href="../assets/parsley.css">
+
+<script src="../assets/jquery.min.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+<script src="../assets/parsley.js"></script>
 </head>
 
 <body>
 <?php
+include "header.php";
 $sql = "select * from order_itemdata where order_id = '$iddata'";
 $query = mysqli_query($db_link,$sql);
 ?>
