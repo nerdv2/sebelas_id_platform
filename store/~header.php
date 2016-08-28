@@ -55,13 +55,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <div class="dropdown navbar-brand" style="float:left;">
-					<button class="dropbtn">Store</button> sebelas.id
-				<div class="dropdown-content" style="left:0;">
-   			<a href="index.php">Store</a>
-				<a href="../blog/">Blog</a>
-				</div>
-        </div>
+          <a class="navbar-brand" href="index.php">sebelas.id Store</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
