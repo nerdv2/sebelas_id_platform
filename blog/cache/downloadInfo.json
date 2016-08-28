@@ -59,7 +59,7 @@
                 "content_type": "application\/octet-stream",
                 "state": "uploaded",
                 "size": 276438,
-                "download_count": 2774,
+                "download_count": 2899,
                 "created_at": "2016-01-24T14:45:49Z",
                 "updated_at": "2016-01-24T14:46:01Z",
                 "browser_download_url": "https:\/\/github.com\/danpros\/htmly\/releases\/download\/v2.7.4\/installer.php"
@@ -129,7 +129,7 @@
                 "content_type": "application\/octet-stream",
                 "state": "uploaded",
                 "size": 276438,
-                "download_count": 187,
+                "download_count": 188,
                 "created_at": "2016-01-11T06:33:58Z",
                 "updated_at": "2016-01-11T06:34:06Z",
                 "browser_download_url": "https:\/\/github.com\/danpros\/htmly\/releases\/download\/v2.7.3\/installer.php"
