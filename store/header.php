@@ -116,8 +116,5 @@
       </div>
     </nav>
 	
-	</td>
-	<td align="right"></td></tr>
-</table>
 <p>
 <div class="box-slider">
