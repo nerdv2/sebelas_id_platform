@@ -1,11 +1,5 @@
-<?php
-include('connectme.php');
-if(isset($_GET['tsearch'])){
-	$searchwhat	= $_GET['searchwhat'];
-	$searchname	= $_GET['searchname'];
-}
-?>
 <?php 
+    include "connectme.php";
     session_start();
     $role = $_SESSION['sess_userrole'];
     if(!isset($_SESSION['sess_username']) || $role!=1){
@@ -13,32 +7,41 @@ if(isset($_GET['tsearch'])){
     }
 ?>
 <html>
+<head><!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8589-1" />
-<title>SEARCH RESULT</title>
-<link href="style.css" rel="stylesheet">
+<meta charset="utf-8">
+<title>Users data</title>
+<link rel="stylesheet" href="../assets/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../assets/admin.css">
+<link rel="stylesheet" href="../assets/parsley.css">
+
+<script src="../assets/jquery.min.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+<script src="../assets/parsley.js"></script>
 </head>
 
-<body >
+<body>
 <?php
+include "header.php";
 $batas   = 10;
 $page = @$_GET['page'];
 if(empty($page)){
-$posisi  = 0;
-$page = 1;
+	$posisi  = 0;
+	$page = 1;
 }else{ 
-$posisi  = ($page-1) * $batas; 
+  $posisi  = ($page-1) * $batas; 
 }
 $no = $posisi + 1;
-$sql = 'select * from users where '.$searchwhat.'="'.$searchname.'" limit'.$posisi.','.$batas;
-$query = mysqli_query($db_link,$sql);
+$sql_1 = "select * from users LIMIT $posisi,$batas";
+$query = mysqli_query($db_link,$sql_1);
 ?>
-<h2><strong><p align="center">Search Result</p></strong></h2>
-<h4><p align="center"><a href="adminpanel.php">Return to Admin Panel</a></p></h4>
-<table width="850" border="1" cellpadding="0" align="center" class="bordered">
+<h2><strong><p align="center">Users Data</p></strong></h2>
+<table width="1200" border="1" cellpadding="0" align="center" class="bordered">
 	<tr>
 		<form method="get" action="searchuser.php">
-		<td colspan='8'><select name="searchwhat">
+		<td colspan='11'><select name="searchwhat">
 			<option selected="selected">--Search--</option>
 				<option name='ID' value='ID'>Users ID</option>
 				<option name='username' value='username'>Username</option>
@@ -47,9 +50,9 @@ $query = mysqli_query($db_link,$sql);
                 <option name='admin' value='admin'>Admin</option>
                 <option name='name' value='name'>Customer Name</option>
 			</select>
-			<input class="searchinput" type="text" value="" name="searchname"><br>
-			<input type="submit" name="tsearch" value="SEARCH"><br><br>
-			<a href="usermgmt.php">Return to users data</a>
+			<input type="text"  class="searchinput" value="" name="searchname"><br>
+			<input type="submit" name="tsearch" value="SEARCH">
+			
 		</td>
 		</form>
 	</tr>
@@ -76,7 +79,7 @@ $query = mysqli_query($db_link,$sql);
 		<td p align="center" bgcolor="#FFFFFF"><?php echo $data['name']; ?></td>
 		<td p align="center" bgcolor="#FFFFFF">
 		<a href="viewuser.php?id=<?php echo $data['ID'];?>" title="Show user data?"><img style="max-width:40px;max-height:40px;width:auto;height:auto;" src="img/Page-Find.png"></img></a>
-        <a href="edituser.php?id=<?php echo $data['ID'];?>" title="Edit this user?"><img style="max-width:40px;max-height:40px;width:auto;height:auto;" src="img/Page-Edit.png"></img></a>
+        <a href="edit_user.php?id=<?php echo $data['ID'];?>" title="Edit this user?"><img style="max-width:40px;max-height:40px;width:auto;height:auto;" src="img/Page-Edit.png"></img></a>
 		<a href="deleteuser.php?id=<?php echo $data['ID'];?>" onclick="return confirm('Delete confirmation?')" title="Delete this user?"><img style="max-width:40px;max-height:40px;width:auto;height:auto;" src="img/Page-Delete.png"></img></a>
 		</td>
 	</tr>
@@ -84,19 +87,19 @@ $query = mysqli_query($db_link,$sql);
 	}
 ?>
 <tr>
-	<td colspan="9">
+	<td colspan="">
 		<?php
-		$query2 = mysqli_query($db_link,"select * from users where $searchwhat=$searchname");
+		$query2 = mysqli_query($db_link,"select * from users");
 		$jmldata    = mysqli_num_rows($query2);
 		$jmlberanda = ceil($jmldata/$batas);
 		//echo "<br> beranda : ";
 		for($i=1;$i<=$jmlberanda;$i++)
 		if ($i != $page){
-			echo " <a href=\"searchuser.php?page=$i\">$i</a> | ";
+			echo " <a href=\"usermgmt.php?page=$i\">$i</a> | ";
 		}else{ 
 			echo " | $i | "; 
 		}
-		echo "<br/>Total : $jmldata data";
+		echo "<br/>Total : $jmldata orang";
 		?>
 	</td>
 </tr>
