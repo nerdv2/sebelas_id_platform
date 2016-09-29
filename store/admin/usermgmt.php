@@ -25,17 +25,8 @@
 <body>
 <?php
 include "header.php";
-$batas   = 10;
-$page = @$_GET['page'];
-if(empty($page)){
-	$posisi  = 0;
-	$page = 1;
-}else{ 
-  $posisi  = ($page-1) * $batas; 
-}
-$no = $posisi + 1;
-$sql_1 = "select * from users LIMIT $posisi,$batas";
-$query = mysqli_query($db_link,$sql_1);
+$sql = 'select * from users';
+$query = mysqli_query($db_link,$sql);
 ?>
 <h2><strong><p align="center">Users Data</p></strong></h2>
 <table width="1200" border="1" cellpadding="0" align="center" class="bordered">
@@ -86,23 +77,6 @@ $query = mysqli_query($db_link,$sql_1);
 <?php
 	}
 ?>
-<tr>
-	<td colspan="7">
-		<?php
-		$query2 = mysqli_query($db_link,"select * from users");
-		$jmldata    = mysqli_num_rows($query2);
-		$jmlberanda = ceil($jmldata/$batas);
-		//echo "<br> beranda : ";
-		for($i=1;$i<=$jmlberanda;$i++)
-		if ($i != $page){
-			echo " <a href=\"usermgmt.php?page=$i\">$i</a> | ";
-		}else{ 
-			echo " | $i | "; 
-		}
-		echo "<br/>Total : $jmldata orang";
-		?>
-	</td>
-</tr>
 </table>
 <p align="center">Copyright (c) 2016 eCommerce_dv, All Right Reserved. Programmed by : <a href="mailto:gema_wardian@hotmail.com">Gema Aji W.</a> and <a href="mailto:dangridho99@gmail.com">Dang Ridho</a></p>
 </body>

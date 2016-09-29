@@ -21,16 +21,7 @@ if(isset($_GET['tsearch'])){
 
 <body >
 <?php
-$batas   = 10;
-$page = @$_GET['page'];
-if(empty($page)){
-$posisi  = 0;
-$page = 1;
-}else{ 
-$posisi  = ($page-1) * $batas; 
-}
-$no = $posisi + 1;
-$sql = "select * from order_data where $searchwhat=$searchname limit $posisi,$batas";
+$sql = 'select * from order_data where '.$searchwhat.'="'.$searchname.'"';
 $query = mysqli_query($db_link,$sql);
 ?>
 <h2><strong><p align="center">Search Result</p></strong></h2>
@@ -82,23 +73,6 @@ $query = mysqli_query($db_link,$sql);
 <?php
 	}
 ?>
-<tr>
-	<td colspan="9">
-		<?php
-		$query2 = mysqli_query($db_link,"select * from order_data where $searchwhat=$searchname");
-		$jmldata    = mysqli_num_rows($query2);
-		$jmlberanda = ceil($jmldata/$batas);
-		//echo "<br> beranda : ";
-		for($i=1;$i<=$jmlberanda;$i++)
-		if ($i != $page){
-			echo " <a href=\"searchorder.php?page=$i\">$i</a> | ";
-		}else{ 
-			echo " | $i | "; 
-		}
-		echo "<br/>Total : $jmldata data";
-		?>
-	</td>
-</tr>
 </table>
 <p align="center">Copyright (c) 2016 eCommerce_dv, All Right Reserved. Programmed by : <a href="mailto:gema_wardian@hotmail.com">Gema Aji W.</a> and <a href="mailto:dangridho99@gmail.com">Dang Ridho</a></p>
 </body>
