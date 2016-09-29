@@ -16,9 +16,7 @@
             $item_code = $row['id'];
             $itemname = $row['name'];
             $itemprice = $row['price'];
-
-         
-         ?>
+?>
          <div class="container">
                 <div class="col-md-12">
                  <div class="row">

@@ -2,7 +2,6 @@
     include('header.php');
     include('config.php');
 ?>
-</p>
 <script type="text/javascript">
       $(document).ready(function() {
         $('#autoWidth').lightSlider({
@@ -52,7 +51,7 @@
 <div class='col-md-4'>
     <div class="thumbnail">
         <h4 class="text-center"><span class="label label-info"><?php echo $row['category']; ?></span></h4>
-        <?php echo '<img src=img/' . $row['image'] . ' style="max-width:220px;max-height:240px;width:220px;height:240px"</img>'; ?>
+        <?php echo '<img src=img/' . $row['image'] . ' style="max-width:220px;max-height:240px;width:220px;height:240px">'; ?>
     <div class="caption">
         <div class="row">
             <div class="col-md-12 col-xs-6 text-center">

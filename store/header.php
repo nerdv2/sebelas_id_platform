@@ -56,11 +56,8 @@
             <span class="icon-bar"></span>
           </button>
           <div class="dropdown navbar-brand" style="float:left;">
-					<button class="dropbtn">Store</button> sebelas.id
-				<div class="dropdown-content" style="left:0;">
-   			<a href="index.php">Store</a>
-				<a href="../blog/">Blog</a>
-				</div>
+					<a href="/sebelas_id">sebelas.id</a>
+				
         </div>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -101,7 +98,7 @@
                 <li><a href="logout.php"><span class="glyphicon glyphicon-credit-card"></span> Logout</a></li>
               </ul>
             </li>
-			
+	
 			<?php
 			
 		}

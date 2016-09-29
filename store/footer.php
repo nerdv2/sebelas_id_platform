@@ -2,14 +2,16 @@
 <div class="row">
 	<div style="width:75px;" class="col-md-4"><br><br><br></div>
 </div>
+<h6>
 <div class="row">
-  <div class="col-md-4"><a href="howto.php">How to shop?</a></div>
-  <div class="col-md-4"><a href="privacy.php">Privacy Policy and Terms of Service</a></div>
-  <div class="col-md-4"><a href="about.php">About Us</a></div>
+  <div class="col-md-4"><a class="footer-menu" href="howto.php">How to shop?</a></div>
+  <div class="col-md-4"><a class="footer-menu" href="privacy.php">Privacy Policy and Terms of Service</a></div>
+  <div class="col-md-4"><a class="footer-menu" href="about.php">About Us</a></div>
 </div>
+</h6>
 <br>
 <div class="row">
-  <div class="col-md-8">Copyright (c) 2016 <a href="/sebelas_id">sebelas.id</a>, All Right Reserved. Built by <a href="team.php">sebelas.id Development Team</a></div>
+  <div class="col-md-8">Copyright (c) 2016 <a class="footer-menu" href="/sebelas_id">sebelas.id</a>, All Right Reserved. Built by <a class="footer-menu" href="team.php">sebelas.id Development Team</a></div>
 </div>
 </div>
 
